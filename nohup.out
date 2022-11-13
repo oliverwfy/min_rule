@@ -1,0 +1,61 @@
+--------------Simulation Starts--------------
+Simulation times : 100
+Malicious : 0.1  c : 0.5
+Log-linear operator:
+Params: k = 10 alpha = 0.1
+
+----------------Simulation ends----------------
+
+
+--------------Simulation Starts--------------
+Simulation times : 100
+Malfunctioning : 0.1
+Malfunctioning Belief: 0.3
+
+Log-linear operator:
+Params: k = 10 alpha = 0.1
+
+Mean Consensus time = 992.13
+----------------Simulation ends----------------
+
+
+--------------Simulation Starts--------------
+Simulation times : 100
+Malicious : 0.2  c : 0.5
+Log-linear operator:
+Params: k = 10 alpha = 0.1
+
+----------------Simulation ends----------------
+
+
+--------------Simulation Starts--------------
+Simulation times : 100
+Malfunctioning : 0.2
+Malfunctioning Belief: 0.3
+
+Log-linear operator:
+Params: k = 10 alpha = 0.1
+
+Mean Consensus time = 996.99
+----------------Simulation ends----------------
+
+
+--------------Simulation Starts--------------
+Simulation times : 100
+Malicious : 0.3  c : 0.5
+Log-linear operator:
+Params: k = 10 alpha = 0.1
+
+Traceback (most recent call last):
+  File "malicious_acc.py", line 66, in <module>
+    result = simulate_malicious_acc(simulation_times=simulation_times, pop_n=pop_n,
+  File "/user/home/ho21481/project/git/min_rule/model.py", line 357, in simulate_malicious_acc
+    opinion_pooling_malicious(pool, threshold=threshold, strategy=strategy,memory=memory, lamb=memory_weight)
+  File "/user/home/ho21481/project/git/min_rule/utility.py", line 215, in opinion_pooling_malicious
+    min_belief = np.min(pool_normal_belief)
+  File "<__array_function__ internals>", line 5, in amin
+  File "/user/home/ho21481/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 2879, in amin
+    return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+  File "/user/home/ho21481/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+ValueError: zero-size array to reduction operation minimum which has no identity

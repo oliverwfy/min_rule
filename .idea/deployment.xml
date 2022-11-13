@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="ho21481@bc4login.acrc.bris.ac.uk:22" autoUploadExternalChanges="true" showEqualInSync="true" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="ho21481@bc4login.acrc.bris.ac.uk:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/user/home/ho21481/project/git/min_rule" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
