@@ -541,4 +541,3 @@ def simulate_malicious_acc_bc(simulation_times=100, pop_n=100, max_iteration=100
 
 
     return result
-
