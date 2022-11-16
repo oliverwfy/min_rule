@@ -260,6 +260,32 @@ def opinion_pooling_malicious(pool, threshold, strategy, memory, lamb):
     return
 
 
+def opinion_pooling_malicious_bc(pool, threshold, strategy, memory, lamb):
+
+    pool_id = np.array([agent.id for agent in pool])
+    pool_prob = np.empty(len(pool))
+    loc_normal = [i for i, agent in enumerate(pool) if agent.state]
+    pool_normal_belief = [agent.x for agent in pool if agent.state]
+
+
+    min_belief = np.min(pool_normal_belief) if pool_normal_belief else 0.5
+
+    for i, agent in enumerate(pool):
+        if i not in loc_normal:
+            pool_prob[i] = agent.min_rule(min_belief)
+        else:
+            pool_prob[i] = agent.x
+
+    for individual in pool:
+        if individual.state:
+                d_kl = np.exp(-np.array([kl_divergence(individual.x, belief) for belief in pool_prob]))
+                self_pool = pool_prob[d_kl > threshold]
+                individual.x = s_prod(self_pool, 1/ len(self_pool))
+
+        individual.mal_detection()
+
+    return
+
 def opinion_pooling_beta(pool, threshold, memory, lamb):
     pool_prob = np.array([agent.x for agent in pool])
     pool_id = np.array([agent.id for agent in pool])
